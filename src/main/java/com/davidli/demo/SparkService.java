@@ -1,6 +1,5 @@
 package com.davidli.demo;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.spark.sql.*;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +7,9 @@ import static org.apache.spark.sql.functions.col;
 import static org.apache.spark.sql.functions.sum;
 
 @Service
-@Slf4j
 public class SparkService {
 
   public void impactCalculation() {
-    log.info("Starting impact calculation");
     SparkSession spark =
         SparkSession.builder().appName("Simple Application").master("local").getOrCreate();
     // Read all the catalog csv files, sort by NDC, then take the lower price. Returns a sanctioned
