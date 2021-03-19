@@ -45,12 +45,10 @@ public class SparkService {
             .join(purchasesDataset)
             .where(sanctionedCatalogDataSet.col("NDC").equalTo(purchasesDataset.col("NDC")))
             .toDF("NDC", "newPrice", "purchaseNDC", "Quantity", "Cost", "Extended Cost")
-            //.drop("purchaseNDC")
             .withColumn(
                 "impact",
                 col("newPrice")
                     .$times(col("Quantity"))
-                    // .cast("Decimal(20,2)")
                     .minus(col("Extended Cost"))
                     .cast("Decimal(20,2)"))
             .groupBy("NDC")
