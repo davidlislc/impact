@@ -9,14 +9,14 @@ This project uses [Apache Spark](https://spark.apache.org/) ,a unified analytics
 * On Windows machine, there is a known issue. The HADOOP_HOME and PATH needs to be set before Sprak runs.A folder called hadoop has been provided at the root.
   Copy the folder of Hadoop to a location, and set system environment variable HADOOP_HOME and 
   system PATH. More on github: [winutils on github](https://github.com/steveloughran/winutils).
-  set environment vars:
+* set environment vars:
 ```
 HADOOP_HOME=<your local hadoop-ver folder>
 PATH=%PATH%;%HADOOP_HOME%\bin
 ```
 * Please use the inline comments as an explanation of the implementation algorithm.
   
-* When the program runs, it will read catalogs and purchase from the data folder, and generates two csv files into impact and impactTotal directories.
+* When the program runs, it will read catalogs and purchases from the data folder, and generate two csv files into impact and impactTotal directories.
 
 * A final csv file impact.csv has been generated for you convenience. It can be found in the data folder.
 
